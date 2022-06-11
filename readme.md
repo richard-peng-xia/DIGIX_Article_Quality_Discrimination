@@ -1,9 +1,8 @@
-# 运行顺序
+This repository stores the code for 2021 [DIGIX全球校园AI算法精英大赛](https://developer.huawei.com/consumer/cn/activity/digixActivity/digixdetail/201621215957378831?ha_source=skw_sf&ha_sourceId=89000070) 赛题二 基于多模型迁移预训练文章质量判别.
 
-1. 数据预处理 preprocess
-2. 使用P训练Bert分类器(10分类)  train_bert
-3. 使用已训练的分类器预测U，并输出RN build_pu_data
-4. 使用P和RN训练二类器
-5. 使用 Bert分类器 和 二分类器 联合预测 测试集上样本的类别，输出结果至文件joint_predictor
-
-2021DIGIX赛题二基于多模型迁移预训练文章质量判别rank50/250，主要基于baseline，加了一些tricks，仅供参考
+# Run
+1. Preprocess the data `preprocess.py`
+2. Train Bert Classifier with P (10 categories)  `Train_Bert.py`
+3. Use the trained classifier to predict U and output RN  `Build_PU_data.py`
+4. Train the binary classifier with P and RN `Train_PU_model.py`
+5. Bert classifier and binary classifier are used to predict the categories of samples on the test set and output the results to `submission.csv` `Joint_Predictor.py`
